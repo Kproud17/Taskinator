@@ -18,6 +18,7 @@ var taskFormHandler = function (event) {
   if (!taskNameInput || !taskTypeInput) {
     alert("You need to fill out the task form!");
     return false;
+
   }
 
   // reset form fields for next task to be entered
