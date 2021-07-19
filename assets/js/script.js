@@ -18,7 +18,6 @@ var taskFormHandler = function (event) {
   if (!taskNameInput || !taskTypeInput) {
     alert("You need to fill out the task form!");
     return false;
-
   }
 
   // reset form fields for next task to be entered
@@ -71,9 +70,6 @@ var createTaskEl = function(taskDataObj) {
       break;
     default:
       console.log("Something went wrong!");
-
-      console.log(taskDataObj);
-      console.log(taskDataObj.status);
   }
 
   // save task as an object with name, type, status, and id properties then push it into tasks array
@@ -83,10 +79,6 @@ var createTaskEl = function(taskDataObj) {
 
   // save tasks to localStorage
   saveTasks();
-
-  taskDataObj.id = taskIdCounter;
-
-  taskActionsEl.push(taskDataObj);
 
   // increase task counter for next unique task id
   taskIdCounter++;
@@ -286,26 +278,5 @@ pageContentEl.addEventListener("click", taskButtonHandler);
 
 // for changing the status
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
-
-var tasks = [
-  {
-    id: 1, 
-    name: "Add localStorage persistence",
-    type: "Web",
-    status: "in progress",
-  },
-  {
-    id: 2, 
-    name: "Learn Java Script", 
-    type: "Web",
-    status: "in progress", 
-  },
-  {
-    id: 3, 
-    name:"Refractor code", 
-    type: "Web", 
-    status:"to do"
-  }
-];
 
 loadTasks();
